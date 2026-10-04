@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nhất Dương Music Center</title>
+<meta name="description" content="App vận hành Nhất Dương Music Center – lịch học, báo bài, học phí.">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Nhất Dương">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<style>
+  html,body{margin:0;height:100%;background:#fff;overflow:hidden}
+  body{padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0);box-sizing:border-box}
+  iframe{display:block;border:0;width:100%;height:100%}
+  #wait{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#6f675b;background:#fff;transition:opacity .3s}
+  #wait b{font-size:20px;color:#2b2620}
+  #wait i{font-style:italic;font-size:13px}
+  #wait a{color:#9a6b00}
+</style>
+</head>
+<body>
+<div id="wait"><b>Nhất Dương Music Center</b><i>Âm nhạc là của bạn</i><span id="msg">Đang mở app…</span></div>
+<iframe id="app" title="App Nhất Dương" allow="clipboard-write; clipboard-read; fullscreen" src="https://script.google.com/macros/s/AKfycbwDJVj4EujgGjqRVznRAijUnUJ18uPClYamE7ZOSLrDcN3X4tRGBQLLPH4eiO_tcLc/exec"></iframe>
+<script>
+  var f = document.getElementById("app"), w = document.getElementById("wait");
+  f.addEventListener("load", function(){ w.style.opacity = 0; setTimeout(function(){ w.remove(); }, 400); });
+  setTimeout(function(){ if (document.getElementById("wait")) document.getElementById("msg").innerHTML = 'Mạng chậm? <a href="' + f.src + '">Mở app trực tiếp</a>'; }, 12000);
+</script>
+</body>
+</html>
